@@ -35,16 +35,15 @@ TABLE CONTENT
 }
 @font-face {
   font-family: Segoe UI;
-  src: url(fonts/SEGOEUI.ttf);
+  src: url(../font/SEGOEUI.TTF);
 }
 @font-face {
   font-family: Segoe UI Light;
-  src: url(fonts/SEGOEUILT.ttf);
+  src: url(../font/SEGOEUILT.ttf);
 }
 html, body {
   height: 100%;  
 
-  
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
