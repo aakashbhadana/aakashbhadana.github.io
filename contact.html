@@ -214,7 +214,7 @@
 			<div class="container" style="padding-top:20px">
 				<div class="row">
 					<div class="col-md-12 copyright text-center">
-						<p>Designed by <a onclick="sendMail()">Aakash Bhadana</a></a>
+						<p>Designed by <a href="https://aakashbhadana.github.io/">Aakash Bhadana</a></a>
 						</p>
 					</div>
 				</div>
@@ -223,22 +223,6 @@
 	</div>
 	<!--#wrapper--> <a href="#" class="back-to-top heading"><i class="icon-left-open-big"></i><span  class="d-lg-inline d-md-none">Top</span></a>
 	<!--Scripts-->
-	<script src="https://smtpjs.com/v3/smtp.js">
-	</script>
-	<script>
-		function sendMail(){
-			alert();
-			Email.send({
-				SecureToken: "9ab31828-1934-45ea-9309-1ff8cf4be983",
-				To: 'aakashbhadana@outlook.com',
-				From: "aakashbhadana.tech@gmail.com",
-				Subject: "This is the subject",
-				Body: "And this is the body"
-			}).then(
-				message => alert(message)
-			);
-		}
-	</script>
 	<script src="assets/js/bootstrap.js"></script>
 	<script src="assets/js/jquery-scrolltofixed-min.js"></script>
 	<script src="assets/js/theia-sticky-sidebar.js"></script>
