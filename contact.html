@@ -163,8 +163,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<h4 class="spanborder">
-                                    <span>Contact</span>
-                                </h4>
+								<span>Contact</span>
+							</h4>
 							<p></p>
 							<div class="sidebar-widget widget-about">
 								<p><b>Faridabad, Haryana, India,</b> Earth, The Solar System, Orion Arm,
@@ -174,8 +174,8 @@
 							</div>
 							<br>
 							<h4 class="spanborder">
-                                    <span>Let's Connect</span>
-                                </h4>
+								<span>Let's Connect</span>
+							</h4>
 							<p></p>
 							<div class="sidebar-widget widget-about">
 								<p><b>Facebook</b>.com/bhadanaaakash</p>
@@ -186,21 +186,22 @@
 						</div>
 						<div class="col-md-6">
 							<h4 class="spanborder">
-                                    <span>Drop me a message</span>
-                                </h4>
+								<span>Drop me a message</span>
+							</h4>
 							<p>Say something interesting and I'll reach out to you in no time ... }</p>
 							<div class="form-contact">
 								<p>
-									<input type="text" name="your-name" placeholder="Your Name">
+									<input type="text" name="your-name" id="yourname" placeholder="Your Name">
 								</p>
 								<p>
-									<input type="email" name="your-email" placeholder="Your Mail">
+									<input type="email" name="your-email" id="youremail" placeholder="Your Mail">
 								</p>
 								<p>
-									<textarea name="your-message" cols="40" rows="10" placeholder="Your Message"></textarea>
+									<textarea name="your-message"  id="yourmsg" cols="40" rows="10"
+										placeholder="Your Message"></textarea>
 								</p>
 								<p>
-									<input type="submit" value="SEND">
+									<input type="submit" id="sendbt" value="SEND" onclick="sendMail()">
 								</p>
 							</div>
 						</div>
@@ -221,12 +222,52 @@
 			</div>
 		</footer>
 	</div>
-	<!--#wrapper--> <a href="#" class="back-to-top heading"><i class="icon-left-open-big"></i><span  class="d-lg-inline d-md-none">Top</span></a>
+	<!--#wrapper--> <a href="#" class="back-to-top heading"><i class="icon-left-open-big"></i><span
+			class="d-lg-inline d-md-none">Top</span></a>
 	<!--Scripts-->
 	<script src="assets/js/bootstrap.js"></script>
 	<script src="assets/js/jquery-scrolltofixed-min.js"></script>
 	<script src="assets/js/theia-sticky-sidebar.js"></script>
 	<script src="assets/js/scripts.js"></script>
+
+	<script>
+		function sendMail() {
+
+			document.getElementById("sendbt").value = "Wait, Sending ..."
+			var name = document.getElementById('yourname').value;
+			var email = document.getElementById('youremail').value;
+			var message = document.getElementById('yourmsg').value;
+
+			if(name == "" || email == "" || message == ""){
+				alert('You need to fill in your details : (');
+			}
+
+			var data = {
+				service_id: 'gmail',
+				template_id: 'new_message',
+				user_id: 'user_zIJZ0O64GsndU6xw3Ip8g',
+				template_params: {
+					'name': name,
+					'email': email,
+					'message': message
+				}
+			};
+
+			$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json'
+			}).done(function () {
+				document.getElementById("sendbt").value = "SENT : )"
+
+				setTimeout(function(){
+					document.getElementById("sendbt").value = "SEND"
+				},3000)
+			}).fail(function (error) {
+				alert('Oops... ' + JSON.stringify(error));
+			});
+		}
+	</script>
 </body>
 
 </html>

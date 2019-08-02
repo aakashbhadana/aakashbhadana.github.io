@@ -44,6 +44,7 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.bpopup.min.js"></script>
 </head>
+
 <body class="home">
 	<div class="top-scroll-bar"></div>
 	<!--Mobile navigation-->
@@ -250,10 +251,10 @@
 						<div class="col-md-7">
 							<div class="row">
 								<div class="col-md-12">
-									<input type="text" class="form-control" placeholder="Enter your e-mail address">
+									<input type="text" id="youremail" class="form-control" placeholder="Enter your e-mail address">
 								</div>
 								<div class="col-md-12 mt-2">
-									<button type="submit" class="btn btn-success btn-block">Ping</button>
+									<button type="submit" class="btn btn-success btn-block" onclick="sendMail()"><span id="sendbt">Ping</span></button>
 								</div>
 							</div>
 						</div>
@@ -280,6 +281,45 @@
 	<script src="assets/js/jquery-scrolltofixed-min.js"></script>
 	<script src="assets/js/theia-sticky-sidebar.js"></script>
 	<script src="assets/js/scripts.js"></script>
+
+	<script>
+		function sendMail() {
+
+			document.getElementById("sendbt").innerHTML = "Wait, Sending ..."
+			var name = "Nerd";
+			var email = document.getElementById('youremail').value;
+			var message = "Want to discuss a proposition";
+
+			if (email == "") {
+				alert('You need to fill in your Email : (');
+			}
+
+			var data = {
+				service_id: 'gmail',
+				template_id: 'new_message',
+				user_id: 'user_zIJZ0O64GsndU6xw3Ip8g',
+				template_params: {
+					'name': name,
+					'email': email,
+					'message': message
+				}
+			};
+
+			$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json'
+			}).done(function () {
+				document.getElementById("sendbt").innerHTML = "SENT : )"
+
+				setTimeout(function () {
+					document.getElementById("sendbt").innerHTML = "Ping"
+				}, 3000)
+			}).fail(function (error) {
+				alert('Oops... ' + JSON.stringify(error));
+			});
+		}
+	</script>
 </body>
 
 </html>
