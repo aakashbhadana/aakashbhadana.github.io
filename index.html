@@ -29,7 +29,6 @@
 	<link href="assets/css/widgets.css" rel="stylesheet">
 	<link href="assets/css/color-default.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
-	<link href="assets/css/congrats.css" rel="stylesheet">
 
 	<!-- Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700&amp;display=swap" rel="stylesheet">
@@ -46,7 +45,6 @@
 </head>
 
 <body class="home">
-	<canvas id="confeti" width="300" height="300" class="active"></canvas>
 	<div class="top-scroll-bar"></div>
 	<!--Mobile navigation-->
 	<div class="sticky-header fixed d-lg-none d-md-block">
@@ -160,32 +158,6 @@
 		</header>
 
 		<main id="content">
-			<!--content-widget-->
-			<div class="content-widget" style="background-color: #00affa;" id="cisco">
-				<div class="container">
-					<div class="row justify-content-between post-has-bg ml-0 mr-0" style="background-color: #00affa;margin: 0px;">
-						<div class="col-lg-6 col-md-4" style="display:flex; align-items:center;text-align: center;">
-							<figure>
-								<a href="#">
-									<img src="assets/images/Caeli_Team.jpg"
-										alt="Team Caeli won Cisco GPS 2020" style="margin-top: 25px;box-shadow:rgba(0,0,0,0.3) 0px 0px 20px;width:80%">
-								</a>
-							</figure>
-						</div>
-						<div class="col-lg-6 col-md-8" >
-							<div class="pt-5 pb-5 pl-md-5 align-self-center" style="text-align: center;">
-								<img src="assets/images/cisco_logo.png" style="width: 150px;"><br>
-								<h2 class="entry-title mb-3" style="color:#fff !important">Global Problem Solvers 2020</h2>
-								<h4 class="entry-title mb-3" style="color:#fff !important">WINNERS</h4>
-								<img src="assets/images/CAELI_WHITE.png" style="width: 120px;"><br>
-								
-							
-							</div>
-						</div>
-					</div>
-					<div class="divider"></div>
-				</div>
-			</div>
 			<!--content-widget-->
 			<div class="section-featured featured-style-1">
 				<div class="container">
@@ -830,14 +802,7 @@
 	<script src="assets/js/jquery-scrolltofixed-min.js"></script>
 	<script src="assets/js/theia-sticky-sidebar.js"></script>
 	<script src="assets/js/scripts.js"></script>
-	<script src="assets/js/congrats.js"></script>
 
-	<script>
-		setTimeout(()=>{
-			$("#cisco").slideUp();
-			$("#confeti").fadeOut();
-		},8000);
-	</script>
 </body>
 
 </html>
