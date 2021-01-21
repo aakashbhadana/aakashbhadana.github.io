@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+<title>RingMe</title>
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<style>
+body{
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+}
+table{
+    width: 100%;height: 100%;
+}
+.card{
+    background-color: #111111;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.symbol{
+    color: #666;font-size: 14px;text-transform:uppercase;
+}
+.logo{
+    width: 40px;border-radius: 40px;
+}
+.up{
+    color: #5bb543;
+}
+.down{
+    color: #d1342d;
+}
+#modal{
+    position: fixed;
+    z-index: 9;
+    width: 80%;
+    height: 240px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color: #111111;
+    box-shadow: 0px 0px 12px rgb(0,0,0);
+}
+.button{
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #5bb543;
+  float: right;
+}
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #d1342d;
+  float: right;
+}
+
+</style>
+</head>
+
+<body>
+<div id="layer" onclick='$("#modal").fadeOut();$("#layer").fadeOut()' style="display:none;background:rgba(0,0,0,0.8);position: fixed; z-index: 1;top: 0; left: 0; bottom: 0; right: 0;"></div>
+<div id='modal' style="display:none;">
+    <div style='font-size: 16px;color: #fff;text-align: center;'>
+        <img id='icon' src="" class='logo'>
+        <table cellpadding="0" cellspacing="0" style="font-weight: normal;margin-top: 30px;font-size: 14px;">
+            <tr style="text-align: center;">
+                <td id="less" onclick="togglebt(-1)" style="padding: 12px;border:#fff solid 1px;border-radius: 5px 0px 0px 5px;">Less than</td>
+                <td id="more" onclick="togglebt(1)" style="border:#fff solid 1px;border-radius: 0px 5px 5px 0px;;padding: 12px">More than</td>
+            </tr>
+        </table>
+        <input id="price" type="number" placeholder="Price" style="background-color: #222222;height: 40px; font-size: 16px;color: #fff;border-radius: 5px;border: 0px; width: 100%;margin-top: 20px;outline: none;text-align: center;">
+        <td colspan='2'><div onclick='add_alert()' class='button' style='background-color: #5bb543;margin-top: 20px;font-weight: bold;padding: 10px;'>ADD</div></td>
+    </div>
+</div>
+
+<div style='font-size: 32px;font-weight: bold;'>
+    RingMe
+    <div id="onoff" onclick='onoff()' class='button' style='background-color: #5bb543;float: right;font-size: 12px;width: 40px;'>ON</div>
+</div>
+<div style='font-size: 18px;font-weight: bold;color: #666666;margin-top: 30px;'>
+    Alerts
+</div>
+<div id='alertlist' style='width: 100%;margin-top: 30px;'>
+    
+</div>
+<div style='font-size: 18px;font-weight: bold;color: #666666;margin-top: 30px;'>
+    All Coins
+</div>
+<div id='coinlist' style='width: 100%;margin-top: 30px;'>
+    
+</div>
+
+<audio id="audio" loop>
+    <source src='https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3' type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+</body>
+
+<script>
+var check;
+var state = 1;
+
+var alerts = [];
+var coins = [];
+
+var toggleval = 0;
+var active = -1;
+
+var audio = new Audio('https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3'); 
+
+if (typeof(Storage) !== "undefined") {
+
+    if(localStorage.getItem("coinalerts") !== null){
+        var coinalerts = localStorage.getItem("coinalerts").split(",");
+        var count = 1;
+        var set5 = [];
+        for(var i=0; i<coinalerts.length;i++){
+            set5.push(coinalerts[i]);
+
+            if(count==5){
+                alerts.push(set5);
+                set5 = [];
+                count = 1;
+                continue;
+            }
+            count++;
+        }
+    }
+    update_alerts();
+
+} else {
+alert("TEMPORARY SESSION");
+}
+
+
+function alert_window(x){
+    $("#layer").fadeIn();
+    $("#modal").fadeIn();
+    $("#icon").attr("src",coins[x][3]);
+    active = x;
+}
+function add_alert(){
+
+    var price = $("#price").val();
+    alerts.push([coins[active][0],coins[active][1],price,toggleval,coins[active][3]]);
+    
+    $("#layer").fadeOut();
+    $("#modal").fadeOut();
+    $("#less").css({"background-color": "#111111", "color": "#fff"});
+    $("#more").css({"background-color": "#111111", "color": "#fff"});
+    $("#price").val("");
+    toggleval = 0;
+    localStorage.setItem("coinalerts",alerts.toString());
+    update_alerts();    
+}
+
+function del_alert(x){
+    alerts.splice(x,1);
+    localStorage.setItem("coinalerts",alerts.toString());
+
+    update_alerts();
+    $("#"+x).slideUp();
+    document.getElementById("audio").pause();
+    
+}
+
+function togglebt(x){
+if(x>0){
+    toggleval = 1;
+    $("#more").css({"background-color": "#ffffff", "color": "#000"});
+    $("#less").css({"background-color": "#111111", "color": "#fff"});
+
+}else if(x<0){
+    toggleval = -1;
+    $("#less").css({"background-color": "#ffffff", "color": "#000"});
+    $("#more").css({"background-color": "#111111", "color": "#fff"});
+}
+}
+
+function update_alerts(){   
+    $("#alertlist").html("");
+
+    for(var i=0;i<alerts.length;i++){
+    var arr = "";
+    if(alerts[i][3]==1){
+        arr = "up";
+    }else if(alerts[i][3]==-1){
+        arr = "down";
+    
+    }
+
+    $("#alertlist").append("<div class='card'><table><tr onclick='expand("+i+")'><td width='80px'><img id='alert_logo' src='"+alerts[i][4]+"' class='logo'></td><td id='alert_name' style='text-align: left;'><span id='alert_fullname'>"+alerts[i][1]+"</span><br><span id='alert_symbol' class='symbol'>"+alerts[i][0]+"</span></td><td id='arrow' style='text-align: right;'><div class='arrow-"+arr+"'></div></td><td id='alert_rate' style='text-align: right;width: 100px;' class='arr'>"+alerts[i][2]+"</td></tr><tr id='"+i+"' style='display: none;'><td id='' onclick='del_alert("+i+")' colspan='4'><div class='button' style='background-color:#d1342d;'>Delete</div></td></tr></table></div>");
+}
+}
+
+function update_coins(){
+
+    $.getJSON('https://coinswitch.co/proxy/in/api/v1/coins', function(data) {
+    $("#coinlist").html("");
+    coins = [];
+    var i = 0;
+    data.forEach(coin => {
+        var symbol = coin.symbol;
+        var name = coin.name;
+        var logo = coin.logo;
+        var rate = coin.cmc_coin.rate_inr;
+
+        coins.push([symbol,name,rate,logo]);
+
+        $("#coinlist").append("<div onclick='alert_window("+i+")' class='card'><table><tr><td width='80px'><img id='logo' src='"+logo+"' class='logo'></td><td id='name' style='text-align: left;'><span id='fullname'>"+name+"</span><br><span id='symbol' class='symbol'>"+symbol+"</span></td><td id='rate' style='text-align: right;'>"+rate.toFixed(4)+"</td></tr></table></div>");
+        i++;
+    });
+});
+}
+
+function expand(x){
+    $("#"+x).toggle();
+}
+
+function check_price(rate,price,state){
+    if(state==-1){
+        if(rate<price){
+            notify();
+        }
+    }else if(state==1){
+        if(rate>price){
+            notify();
+        }
+    }
+}
+
+function notify(){
+    document.getElementById("audio").play();
+}
+
+function start(){
+    check = setInterval(() => {
+        
+        $.getJSON('https://coinswitch.co/proxy/in/api/v1/coins', function(data) {
+       
+        data.forEach(coin => {
+    
+            for(var i=0;i<alerts.length;i++){
+                if(coin.symbol==alerts[i][0]){
+                    check_price(coin.cmc_coin.rate_inr,alerts[i][2],alerts[i][3]);
+                }
+            }
+            
+            });
+        });
+      
+        update_coins();
+    }, 30000);
+}
+
+function onoff(){
+    if(state==1){
+        state=0;
+        $("#onoff").css({"background-color": "#d1342d"});
+        $("#onoff").text("OFF");
+        document.getElementById("audio").pause();
+        clearInterval(check);
+    }else{
+        state=1;
+        $("#onoff").css({"background-color": "#5bb543"})
+        $("#onoff").text("ON");
+        start();
+    }
+}
+
+start();
+update_coins();
+</script>
+
+</html>
