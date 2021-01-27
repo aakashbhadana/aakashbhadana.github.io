@@ -108,8 +108,7 @@ table{
     
 </div>
 
-<audio id="audio" loop>
-    <source src='https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3' type="audio/mpeg">
+<audio loop preload="auto" id="audio" src="assets/beep.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
   
@@ -124,8 +123,6 @@ var coins = [];
 
 var toggleval = 0;
 var active = -1;
-
-var audio = new Audio('https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3'); 
 
 if (typeof(Storage) !== "undefined") {
 
