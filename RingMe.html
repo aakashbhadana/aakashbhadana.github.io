@@ -205,7 +205,7 @@ function update_alerts(){
     
     }
 
-    $("#alertlist").append("<div id=a"+i+" class='card'><table><tr onclick='expand("+i+")'><td width='80px'><img id='alert_logo' src='"+alerts[i][4]+"' class='logo'></td><td id='alert_name' style='text-align: left;'><span id='alert_fullname'>"+alerts[i][1]+"</span><br><span id='alert_symbol' class='symbol'>"+alerts[i][0]+"</span></td><td id='arrow' style='text-align: right;'><div class='arrow-"+arr+"'></div></td><td id='alert_rate' style='text-align: right;width: 100px;' class='arr'>"+alerts[i][2]+"</td></tr><tr id='"+i+"' style='display: none;'><td id='' onclick='del_alert("+i+")' colspan='4'><div class='button' style='background-color:#d1342d;'>Delete</div></td></tr></table></div>");
+    $("#alertlist").append("<div id=a"+i+" class='card'><table><tr onclick='expand("+i+")'><td width='80px'><img id='alert_logo' src='"+alerts[i][4]+"' class='logo'></td><td id='alert_name' style='text-align: left;'><span id='alert_fullname'>"+alerts[i][1]+"</span><br><span id='alert_symbol' class='symbol'>"+alerts[i][0]+"</span></td><td id='arrow' style='text-align: right;'><span id='live"+alerts[i][0]+"'></span><div class='arrow-"+arr+"' style='margin-left:20px;margin-top:6px'></div></td><td id='alert_rate' style='text-align: right;width: 100px;' class='arr'>"+alerts[i][2]+"</td></tr><tr id='"+i+"' style='display: none;'><td id='' onclick='del_alert("+i+")' colspan='4'><div class='button' style='background-color:#d1342d;'>Delete</div></td></tr></table></div>");
 }
 }
 
@@ -261,14 +261,15 @@ function start(){
             for(var i=0;i<alerts.length;i++){
                 if(coin.symbol==alerts[i][0]){
                     check_price(coin.cmc_coin.rate_inr,alerts[i][2],alerts[i][3],i);
+                    $("#live"+coin.symbol).text(coin.cmc_coin.rate_inr.toFixed(4));
                 }
             }
             
             });
         });
-      
+        
         update_coins();
-    }, 30000);
+    }, 10000);
 }
 
 function onoff(){
