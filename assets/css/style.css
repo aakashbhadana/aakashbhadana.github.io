@@ -34,11 +34,11 @@ TABLE CONTENT
   box-sizing: border-box;
 }
 @font-face {
-  font-family: Segoe UI;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   src: url(../font/SEGOEUI.TTF);
 }
 @font-face {
-  font-family: Segoe UI Light;
+  font-family: "Segoe UI Light", Arial, Helvetica, sans-serif;
   src: url(../font/SEGOEUILT.ttf);
 }
 html, body {
