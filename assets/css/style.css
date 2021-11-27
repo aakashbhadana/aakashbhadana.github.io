@@ -205,7 +205,7 @@ hr.section-divider {
 hr.section-divider::before {
   --x-height-multiplier: 0.342;
   --baseline-multiplier: 0.22;
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', Tahoma, Arial;
   font-weight: 400;
   font-style: italic;
   font-size: 30px;
@@ -346,16 +346,16 @@ body,
 .entry-meta,
 .heading-font
  {
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', Tahoma, Arial;
 }
 .menu-primary, .capsSubtle, .mobi-menu nav{
-	font-family: 'Segoe UI';
+	font-family: 'Segoe UI', Tahoma, Arial;
 }
 .entry-header,
 .entry-wraper .excerpt,
 .entry-wraper .entry-main-content
  {
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', Tahoma, Arial;
 }
 /*BEGIN STYLE*/
 #content {
@@ -577,7 +577,7 @@ margin: -3px 15px 0 0;
 
 /* HEADER */
 .navbar-brand {
-	font-family: 'Segoe UI';
+	font-family: 'Segoe UI', Tahoma, Arial;
 	font-size: 1.85rem;
 	font-weight: 700;
 	letter-spacing: 0px;
@@ -1002,7 +1002,7 @@ header {
 
 .mobi-menu .sub-menu-toggle::after {
   content: '\e801';
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', Tahoma, Arial;
   display: inline-block;
   margin-left: 10px;
 }
@@ -1411,7 +1411,7 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
   z-index: 1;
   top: .5rem;
   right: 1rem;
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', Tahoma, Arial;
   color: #fff;
   font-size: 1.5rem;
   opacity: 0;
