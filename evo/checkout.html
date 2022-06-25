@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Caeli | Checkout</title>
+    <meta property="og:title" content="">
+    <meta property="og:image" content="assets/img/suffocate.PNG">
+    <meta name="description" content="Caeli Evo™ is not just a mask but a personal air purifier on your face.">
+    <link rel="icon" type="image/png" sizes="984x984" href="assets/img/logob.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css?v=2">
+    <script  src="cart.js?v=2"></script>
+</head>
+
+<body onload="cart();badgecount();">
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean-button" style="box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0,0,0,0.1);padding-top: 10px;padding-bottom: 10px;backdrop-filter: blur(5px);background-color: rgba(255,255,255,0.5);">
+            <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/logob.png" style="max-width: 30px;">&nbsp;evo</a>
+                <div class="wrapper navbar-toggler" style="border:0px">
+                    <a href="checkout.html"><i class="fas fa-shopping-bag" style="font-size: 20px;color: #000;"></i></a>
+                    <button data-toggle="collapse" class="navbar-toggler" style="margin-left: 20px;" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <a href="checkout.html"><span id="badge_toggle">0</span></a>
+                </div>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1" style="font-size: 12px;">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Overview</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-toggle="modal" data-target="#demo">Contact us</a></li>
+                        <li class="nav-item d-none" role="presentation"><a class="nav-link" href="#">Track Order</a></li>
+                    </ul>
+                    <div class="wrapper">
+                    <span class="navbar-text actions" style="padding-left: 18px;"><a href="checkout.html"><i class="fas fa-shopping-bag" style="font-size: 20px;color: #000"></i></a><a class="btn btn-light action-button" role="button" href="buy.html" style="background-color: rgb(0,123,255);padding-top: 4px;padding-right: 15px;padding-bottom: 4px;padding-left: 15px;margin-left: 20px;margin-bottom: 8px;">Buy</a></span>
+                    <a href="checkout.html"><span id="badge">0</span></a>
+                </div>
+                </div>
+    </div>
+    </nav>
+    </div>
+    <div id="bagscreen" style="margin-top: 100px;margin-bottom: 70px;">
+        <div class="container" style="padding-left: 10vw; padding-right: 10vw;">
+            <div class="row">
+                <div class="col-md-6 col-xl-6" style="padding-right: 100px;"><span style="font-size: 62px;line-height: 70px;"><strong>Your bag <br>is </strong><strong><span id="bagstate">Ready.</span></strong><br></span>
+                <br><br>
+                <span id="bagmsg" style="font-size: 16px;line-height: 18px;color: #555555;">
+                Add some items to your shopping bag and then visit here to checkout.
+                </span></div>
+                <div class="col" style="padding-top: 50px;"><span style="font-size: 18px;line-height: 22px;"><i class="fas fa-shopping-bag"></i>&nbsp;&nbsp;<strong>Your Items</strong></span>
+                    <div style="margin-top: 50px;">
+                        <div id="cart">
+                         
+                        </div>
+                        <div id="calculations">
+                        <div id="subtotalview" style="margin-top: 20px;"><span style="font-size: 16px;line-height: 16px;">Subtotal</span><span style="font-size: 18px;line-height: 18px;float: right;" id="subtotal">0</span></div>
+                        <div id="shippingview" style="margin-bottom: 20px;border-bottom: 1px solid #dee2e6;padding-bottom: 20px;margin-top: 10px ;"><span style="font-size: 16px;line-height: 16px;">Shipping</span><span style="font-size: 18px;line-height: 18px;float: right;" id="shipping">0</span></div>
+                        <div>
+                        <input id="discount" class="border rounded" type="text" style="padding: 8px;padding-left: 12px;font-size: 14px;" placeholder="Discount code">
+                        </div>
+                        <div style="margin-top: 20px;"><span style="font-size: 22px;line-height: 22px;"><strong>Total</strong></span><span style="font-size: 20px;line-height: 20px;float: right;font-weight: bold;" id="total">0</span></div>
+                        <button id="checkbt" class="btn btn-primary" type="button" style="margin-top: 50px;font-size: 20px;float: right;padding: 10px 30px 10px 30px;border-radius: 10px;">Out of Stock</button></div>                    
+                        </div>
+                    </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="demo">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="padding: 24px;background-position: right;background-repeat: no-repeat;background-size: 200px;">
+                    <h1 style="font-size: 52px;color: rgb(0,0,0);margin-bottom: 20px;"><strong>Get in </strong><span style="color: rgb(27,127,238);"><strong>touch.</strong></span></h1>
+                    <form class="form-inline" method="post" style="overflow: hidden;">
+                        <div class="form-group" style="max-width: 100%;">
+                            <div style="max-width: 460px;">
+                                <p style="font-size: 14px">
+                                    Mail us at <b>info@caeli.in</b><br>
+                                    </p>
+                                <span style="font-size: 16px">Please provide you name and email, <br>Our support team will reach you in no time.</span>
+                                
+                                <br><br>
+                                <input class="form-control" type="text" id="name" placeholder="Your Name" name="name" required="" style="margin-bottom: 10px;font-size: 14px;margin-right: 10px;">
+                                <input class="form-control" type="email" id="email" placeholder="Your Email" style="margin-bottom: 10px;margin-right: 10px;font-size: 14px;" name="email" required="">
+                            </div>
+                        </div>
+                    </form>
+                    <div style="margin-top: 20px;"><button class="btn btn-primary" id="orderbt" onclick="mail(1)" type="submit" style="margin-right: 10px;">Send</button>
+                        <button class="btn btn-light" id="cancelbt" type="button" data-dismiss="modal" style="display: none;">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script>
+        function checkout(){
+            document.getElementById("items").value = items.toString();
+            document.getElementById("qty").value = qty.toString();
+            if(validate()){
+                document.getElementById("checkoutform").submit();
+            }
+        }
+        function validate(){
+
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var comp = document.getElementById("company").value;
+            var add1 = document.getElementById("add1").value;
+            var add2 = document.getElementById("add2").value;
+            var city = document.getElementById("city").value;
+            var state = document.getElementById("state").value;
+            var pin = document.getElementById("pincode").value;
+            
+            if(fname=="" || lname=="" || phone=="" || email=="" || add1=="" || city=="" || state=="" || pin==""){
+                document.getElementById("alert").innerText = "Please fill the form to continue";
+                window.scrollTo(0, 0);
+                $("#alert").slideDown();
+                return false;
+            }
+
+            if(isNaN(phone)||isNaN(pin)){
+                document.getElementById("alert").innerText = "Phone or Pincode must be a number";
+                window.scrollTo(0, 0);
+                $("#alert").slideDown();
+                return false;
+            }
+            
+
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(!email.match(mailformat)){
+                document.getElementById("alert").innerText = "Please check your Email";
+                window.scrollTo(0, 0);
+                $("#alert").slideDown();
+                return false;
+            }
+            return true;
+                        
+        }
+
+function mail(x){
+
+if(x==1){
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    if(email == ""){
+        alert('Please enter your Email');
+        return;
+    }
+    if(name == ""){
+        alert('Please enter your Name');
+        return;
+    }
+    document.getElementById("orderbt").innerHTML = "Sending...";
+
+    $.ajax('https://caeli.in/support.php', {
+        type: 'POST',
+        data:   {
+                name: name,
+                mail: email,
+                },
+    }).done(function () {
+        document.getElementById("orderbt").innerHTML = "Sent";
+        document.getElementById("orderbt").style.backgroundColor = "#66b501";
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+
+        setTimeout(function(){
+            document.getElementById("orderbt").innerHTML = "Send";
+            document.getElementById("orderbt").style.backgroundColor = "#007bff";
+        },2000);
+
+    }).fail(function (error) {
+        alert('Oops... Something is wrong, Please write to us at info@caeli.in to contact');
+    });
+
+}
+}
+
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L3SGW57S2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-2L3SGW57S2');
+</script>
+</body>
+</html>
