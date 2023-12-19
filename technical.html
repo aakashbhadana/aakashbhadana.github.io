@@ -48,9 +48,9 @@
 <body class="home">
 	<div class="top-scroll-bar"></div>
 	<!--Mobile navigation-->
-	<div class="sticky-header fixed d-lg-none d-md-block">
+	<div class="fixed sticky-header d-lg-none d-md-block">
 		<div class="text-right">
-			<div class="container mobile-menu-fixed pr-5">
+			<div class="container pr-5 mobile-menu-fixed">
 				<h1 class="logo-small navbar-brand">
 					<a href="index.html" class="logo">aakash
 						<span style="font-family: 'Segoe UI Light'">bhadana</span>
@@ -98,20 +98,14 @@
 		<header id="header" class="d-lg-block d-none">
 			<div class="container">
 				<div class="align-items-center w-100">
-					<h1 class="logo float-left navbar-brand">
+					<h1 class="float-left logo navbar-brand">
 						<a href="index.html" class="logo">aakash
 							<span style="font-family: 'Segoe UI Light'">bhadana</span>
 						</a>
 					</h1>
-					<div class="header-right float-right w-50">
-						<div class="d-inline-flex float-right text-right align-items-center">
-							<ul class="social-network heading navbar-nav d-lg-flex align-items-center">
-								<li>
-									<a href="https://facebook.com/bhadanaaakash" target="blank"> <i
-											class="icon-facebook"></i>
-									</a>
-								</li>
-							</ul>
+					<div class="float-right header-right w-50">
+						<div class="float-right text-right d-inline-flex align-items-center">
+							
 							<ul class="social-network heading navbar-nav d-lg-flex align-items-center">
 								<li>
 									<a href="https://www.linkedin.com/in/aakashbhadana/" target="blank"> <i
@@ -119,13 +113,9 @@
 									</a>
 								</li>
 							</ul>
-							<ul class="top-menu heading navbar-nav w-100 d-lg-flex align-items-center">
-								<li><a href="https://github.com/aakashbhadana" target="blank" class="btn">Github</a>
-								</li>
-							</ul>
 						</div>
 						<!-- Search Bar 
-                            <form action="#" method="get" class="search-form d-lg-flex float-right">
+                            <form action="#" method="get" class="float-right search-form d-lg-flex">
                             <a href="javascript:void(0)" class="searh-toggle">
                                 <i class="icon-search"></i>
                             </a>
@@ -157,17 +147,16 @@
 		</header>
 		<main id="content">
 			<div class="container">
-				<article class="entry-wraper mb-5">
+				<article class="mb-5 entry-wraper">
 					<div class="row">
-						<div class="col-12 archive-header pt-3 pb-3">
+						<div class="pt-3 pb-3 col-12 archive-header">
 							<kbd style="background-color: #03987c">Award Winning</kbd>
-							<h1 class="mb-3">Tech. <b>Projects</b>,</h1>
+							<h1>Tech. Projects</h1>
 						</div>
 					</div>
-					<div class="entry-meta align-items-center">Updated on, <span>1 Febuary 2022</span></div>
-					<div class="divider"></div>
-					<div class="row justify-content-between pt-0">
-						<div class="col-md-6 p-0">
+
+					<div class="mt-5 row justify-content-between">
+						<div class="p-0 col-md-6">
 							<a href="evo/index.html">
 								<div class="container p-0 OverlayImage zoom">
 									<img src="assets/images/technical/evo.jpg">
@@ -212,7 +201,7 @@
 
 							<a href="#">
 						</div>
-						<div class=" col-md-6 p-0">
+						<div class="p-0 col-md-6">
 
 							<a href="buyway/index.html">
 								<div class="container p-0 OverlayImage zoom">
@@ -251,30 +240,9 @@
 
 
 					</div>
-					<div class="divider"></div>
 
 
 				</article>
-				<div class="border p-5 bg-lightblue mb-5">
-					<div class="row justify-content-between">
-						<div class="col-md-5 mb-2 mb-md-0">
-							<h5 class="font-weight-bold secondfont mb-3 mt-0">Like what you see !</h5>
-							<p class="small-text">Want to work together on something interesting ? Just ping me and i'll
-								get in touch : )</p>
-						</div>
-						<div class="col-md-7">
-							<div class="row">
-								<div class="col-md-12">
-									<input type="text" id="youremail" class="form-control" placeholder="Enter your e-mail address">
-								</div>
-								<div class="col-md-12 mt-2">
-									<button type="submit" class="btn btn-success btn-block" onclick="sendMail()"><span id="sendbt">Ping</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--entry-content-->
 			</div>
 			<!--container-->
 		</main>
@@ -295,45 +263,6 @@
 	<script src="assets/js/jquery-scrolltofixed-min.js"></script>
 	<script src="assets/js/theia-sticky-sidebar.js"></script>
 	<script src="assets/js/scripts.js"></script>
-
-	<script>
-		function sendMail() {
-
-			document.getElementById("sendbt").innerHTML = "Wait, Sending ..."
-			var name = "Nerd";
-			var email = document.getElementById('youremail').value;
-			var message = "Want to discuss a proposition";
-
-			if (email == "") {
-				alert('You need to fill in your Email : (');
-			}
-
-			var data = {
-				service_id: 'gmail',
-				template_id: 'new_message',
-				user_id: 'user_zIJZ0O64GsndU6xw3Ip8g',
-				template_params: {
-					'name': name,
-					'email': email,
-					'message': message
-				}
-			};
-
-			$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
-				type: 'POST',
-				data: JSON.stringify(data),
-				contentType: 'application/json'
-			}).done(function () {
-				document.getElementById("sendbt").innerHTML = "SENT : )"
-
-				setTimeout(function () {
-					document.getElementById("sendbt").innerHTML = "Ping"
-				}, 3000)
-			}).fail(function (error) {
-				alert('Oops... ' + JSON.stringify(error));
-			});
-		}
-	</script>
 </body>
 
 </html>

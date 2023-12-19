@@ -1,446 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<!-- Meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Aakash Bhadana is a Software developer and UI UX designer from India. He has won many International awards for his Innovations for the Social good and is currently working as a freelancer offering his expert services" />
+		<meta name="keywords" content="Aakash, Bhadana, Developer, Designer, India, JavaScript, Microsoft, Imagine Cup, Winner, Caeli, Team, Innovation, freelancer, faridabad, manav rachna, albatros, founder, engineer, software" />
+		<meta name="author" content="Aakash Bhadana" />
+		<title>Aakash Bhadana - Software Developer and Designer | Microsoft Imagine Cup World Finalist 2019</title>
 
-<head>
-	<!-- Meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description"
-		content="Aakash Bhadana is a Software developer and UI UX designer from India. He has won many International awards for his Innovations for the Social good and is currently working as a freelancer offering his expert services">
-	<meta name="keywords"
-		content="Aakash, Bhadana, Developer, Designer, India, JavaScript, Microsoft, Imagine Cup, Winner, Caeli, Team, Innovation, freelancer, faridabad, manav rachna, albatros, founder, engineer, software">
-	<meta name="author" content="Aakash Bhadana">
-	<title>Aakash Bhadana - Software Developer and Designer | Microsoft Imagine Cup World Finalist 2019</title>
+		<!--favincon-->
+		<link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
+		<link rel="icon" type="image/png" href="assets/images/favicon/favicon.png" />
+		<meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
+		<meta name="msapplication-TileColor" content="#03a87c" />
+		<meta name="theme-color" content="#03a87c" />
 
-	<!--favincon-->
-	<link rel="apple-touch-icon" href="assets/images/favicon/favicon.png">
-	<link rel="icon" type="image/png" href="assets/images/favicon/favicon.png">
-	<meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png">
-	<meta name="msapplication-TileColor" content="#03a87c">
-	<meta name="theme-color" content="#03a87c">
+		<!-- Bootstrap, Font Awesome, Aminate, Owl Carausel, Normalize CSS -->
+		<link href="assets/css/bootstrap.css" rel="stylesheet" />
+		<link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+		<link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+		<!-- Site CSS -->
+		<link href="assets/css/imageviewer.css" rel="stylesheet" />
+		<link href="assets/css/style.css" rel="stylesheet" />
+		<link href="assets/css/widgets.css" rel="stylesheet" />
+		<link href="assets/css/color-default.css" rel="stylesheet" />
+		<link href="assets/css/responsive.css" rel="stylesheet" />
+		<!-- Google fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Cabin:400,700&amp;display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=B612+Mono&amp;display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;display=swap" rel="stylesheet" />
+		<!-- Icons fonts-->
+		<link href="assets/css/fontello.css" rel="stylesheet" />
+		<!--Poprup-->
+		<link href="assets/css/popup.css" rel="stylesheet" />
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.bpopup.min.js"></script>
+	</head>
 
-	<!-- Bootstrap, Font Awesome, Aminate, Owl Carausel, Normalize CSS -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet">
-	<link href="assets/css/owl.carousel.min.css" rel="stylesheet">
-	<link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
-	<!-- Site CSS -->
-	<link href="assets/css/imageviewer.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link href="assets/css/widgets.css" rel="stylesheet">
-	<link href="assets/css/color-default.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet">
-	<!-- Google fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700&amp;display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=B612+Mono&amp;display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;display=swap" rel="stylesheet">
-	<!-- Icons fonts-->
-	<link href="assets/css/fontello.css" rel="stylesheet">
-	<!--Poprup-->
-	<link href="assets/css/popup.css" rel="stylesheet">
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.bpopup.min.js"></script>
+	<body class="home">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal Content (The Image) -->
+			<img class="modal-content" id="imgview" />
 
-</head>
-
-<body class="home">
-
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
-
-		<!-- Modal Content (The Image) -->
-		<img class="modal-content" id="imgview">
-
-		<!-- Modal Caption (Image Text) -->
-		<div id="caption"></div>
-	</div>
-
-	<div class="top-scroll-bar"></div>
-	<!--Mobile navigation-->
-	<div class="sticky-header fixed d-lg-none d-md-block">
-		<div class="text-right">
-			<div class="container mobile-menu-fixed pr-5">
-				<h1 class="logo-small navbar-brand">
-					<a href="index.html" class="logo">aakash
-						<span style="font-family: 'Segoe UI Light'">bhadana</span>
-					</a>
-				</h1>
-				<ul class="social-network heading navbar-nav d-lg-flex align-items-center" style="margin-right: 15px">
-					<li><a href="https://www.linkedin.com/in/aakashbhadana/" target="blank"><i
-								class="icon-linkedin"></i></a>
-					</li>
-				</ul>
-				<a href="javascript:void(0)" class="menu-toggle-icon"> <span class="lines"></span>
-				</a>
-			</div>
+			<!-- Modal Caption (Image Text) -->
+			<div id="caption"></div>
 		</div>
-		<div class="mobi-menu">
-			<div class="mobi-menu__logo">
-				<h1 class="logo navbar-brand">
-					<a href="index.html" class="logo">Browse
-					</a>
-				</h1>
-			</div>
-			<!-- Search Bar 
-                <form action="#" method="get" class="menu-search-form d-lg-flex">
-                <input type="text" class="search_field" placeholder="Search..." value="" name="s">
-            </form> -->
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a>
-					</li>
-					<li><a href="about.html">About</a>
-					</li>
-					<li class="current-menu-item"><a href="technical.html">Projects</a>
-					</li>
-					<li><a href="awards.html">Awards</a>
-					</li>
-					
-					<li><a href="contact.html">Get in touch</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-	<!--Mobile navigation-->
-	<div id="wrapper">
-		<header id="header" class="d-lg-block d-none">
-			<div class="container">
-				<div class="align-items-center w-100">
-					<h1 class="logo float-left navbar-brand">
-						<a href="index.html" class="logo">aakash
+
+		<div class="top-scroll-bar"></div>
+		<!--Mobile navigation-->
+		<div class="fixed sticky-header d-lg-none d-md-block">
+			<div class="text-right">
+				<div class="container pr-5 mobile-menu-fixed">
+					<h1 class="logo-small navbar-brand">
+						<a href="index.html" class="logo"
+							>aakash
 							<span style="font-family: 'Segoe UI Light'">bhadana</span>
 						</a>
 					</h1>
-					<div class="header-right float-right w-50">
-						<div class="d-inline-flex float-right text-right align-items-center">
-							<ul class="social-network heading navbar-nav d-lg-flex align-items-center">
-								<li>
-									<a href="https://facebook.com/bhadanaaakash" target="blank"> <i
-											class="icon-facebook"></i>
-									</a>
-								</li>
-							</ul>
-							<ul class="social-network heading navbar-nav d-lg-flex align-items-center">
-								<li>
-									<a href="https://www.linkedin.com/in/aakashbhadana/" target="blank"> <i
-											class="icon-linkedin"></i>
-									</a>
-								</li>
-							</ul>
-							<ul class="top-menu heading navbar-nav w-100 d-lg-flex align-items-center">
-								<li><a href="https://github.com/aakashbhadana" target="blank" class="btn">Github</a>
-								</li>
-							</ul>
-						</div>
-						<!-- Search Bar 
-                            <form action="#" method="get" class="search-form d-lg-flex float-right">
+					<ul class="social-network heading navbar-nav d-lg-flex align-items-center" style="margin-right: 15px">
+						<li>
+							<a href="https://www.linkedin.com/in/aakashbhadana/" target="blank"><i class="icon-linkedin"></i></a>
+						</li>
+					</ul>
+					<a href="javascript:void(0)" class="menu-toggle-icon"> <span class="lines"></span> </a>
+				</div>
+			</div>
+			<div class="mobi-menu">
+				<div class="mobi-menu__logo">
+					<h1 class="logo navbar-brand">
+						<a href="index.html" class="logo">Browse </a>
+					</h1>
+				</div>
+				<!-- Search Bar 
+                <form action="#" method="get" class="menu-search-form d-lg-flex">
+                <input type="text" class="search_field" placeholder="Search..." value="" name="s">
+            </form> -->
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li class="current-menu-item"><a href="technical.html">Projects</a></li>
+						<li><a href="awards.html">Awards</a></li>
+
+						<li><a href="contact.html">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!--Mobile navigation-->
+		<div id="wrapper">
+			<header id="header" class="d-lg-block d-none">
+				<div class="container">
+					<div class="align-items-center w-100">
+						<h1 class="float-left logo navbar-brand">
+							<a href="index.html" class="logo"
+								>aakash
+								<span style="font-family: 'Segoe UI Light'">bhadana</span>
+							</a>
+						</h1>
+						<div class="float-right header-right w-50">
+							<div class="float-right text-right d-inline-flex align-items-center">
+								<ul class="social-network heading navbar-nav d-lg-flex align-items-center">
+									<li>
+										<a href="https://www.linkedin.com/in/aakashbhadana/" target="blank"> <i class="icon-linkedin"></i> </a>
+									</li>
+								</ul>
+							</div>
+							<!-- Search Bar 
+                            <form action="#" method="get" class="float-right search-form d-lg-flex">
                             <a href="javascript:void(0)" class="searh-toggle">
                                 <i class="icon-search"></i>
                             </a>
                             <input type="text" class="search_field" placeholder="Search..." value="" name="s">
                         </form> -->
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<nav id="main-menu" class="stick d-lg-block d-none">
-				<div class="container">
-					<div class="menu-primary">
-						<ul>
-							<li><a href="index.html">Home</a>
-							</li>
-							<li><a href="about.html">About</a>
-							</li>
-							<li class="current-menu-item"><a href="technical.html">My Projects</a>
-							</li>
-							<li><a href="awards.html">Awards</a>
-							</li>
-							
-							<li><a href="contact.html">Get in touch</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</header>
-		<main id="content">
-			<div class="container">
-				<div class="row">
-					<div class="col-12 archive-header pt-3 pb-3">
-						<kbd style="background-color: #ea225e">Healthcare</kbd>
-						<h1 class="mb-3"><b>Virtual Exposure Therapy</b> (VET)</h1>
-					</div>
-				</div>
-				<div class="entry-meta align-items-center">Active : March 2016 to Present</div>
-				<div class="divider"></div>
-
-				<figure class="image zoom mb-5">
-					<img src="assets/images/technical/vet/banner.jpg" alt="post-title" />
-				</figure>
-				<!--figure-->
-
-				<div class="entry-header">
-					<div class="mb-5">
-						<h1 class="entry-title m_b_2rem text">
-							320 million people suffering from anxiety disorder globally
-						</h1>
-						<div class="entry-meta align-items-center">
-							<a class="author-avatar" href="#"><img src="assets/images/who.png" alt=""></a>
-							Stats by - <br>
-							World Health Organization
 						</div>
 					</div>
+					<div class="clearfix"></div>
 				</div>
-				<!--end single header-->
+				<nav id="main-menu" class="stick d-lg-block d-none">
+					<div class="container">
+						<div class="menu-primary">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li class="current-menu-item"><a href="technical.html">My Projects</a></li>
+								<li><a href="awards.html">Awards</a></li>
 
-				<article class="entry-wraper mb-5">
+								<li><a href="contact.html">Get in touch</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<main id="content">
+				<div class="container">
+					<div class="row">
+						<div class="pt-3 pb-3 col-12 archive-header">
+							<kbd style="background-color: #ea225e">Healthcare</kbd>
+							<h1 class="mb-3"><b>Virtual Exposure Therapy</b> (VET)</h1>
+						</div>
+					</div>
+					<div class="entry-meta align-items-center">Active : March 2016 to Present</div>
+					<div class="divider"></div>
 
-					<!-- BOLD LINES 
-						<div class="excerpt mb-4">
+					<figure class="mb-5 image zoom">
+						<img src="assets/images/technical/vet/banner.jpg" alt="post-title" />
+					</figure>
+					<!--figure-->
+
+					<div class="entry-header">
+						<div class="mb-5">
+							<h1 class="entry-title m_b_2rem text">320 million people suffering from anxiety disorder globally</h1>
+							<div class="entry-meta align-items-center">
+								<a class="author-avatar" href="#"><img src="assets/images/who.png" alt="" /></a>
+								Stats by - <br />
+								World Health Organization
+							</div>
+						</div>
+					</div>
+					<!--end single header-->
+
+					<article class="mb-5 entry-wraper">
+						<!-- BOLD LINES 
+						<div class="mb-4 excerpt">
 						<p></p>
 					</div> -->
 
-					<h4 class="spanborder pt-5"><span>The Story behind</span></h4>
-					<div class="entry-main-content dropcap">
-						<p>
-							The inspiration for this project came from one of the team members and original creator
-							Ishlok Vashistha. 2 years back, Ishlok himself was a PTSD patient. He
-							developed the condition after witnessing a traumatic incident in which i lost my friend in a
-							water lake.
-						</p>
-						<p>
-							"2 years of my life following the incident were miserable. I got into depression,
-							stopped going out and gradually even developed phobia of water. It was at that point when i
-							realised how serious this problem is and how our society neglects the presence of such
-							conditions" - Ishlok Vashistha<br>
-							The experience of Ishlok inspired us to develop something for people facing similar kind of
-							challenges in their lives. So, that they can have a speedy recovery.
-						</p>
-
-
-						<div class="divider"></div>
-						<h2>Virtual-Reality treatment</h2>
-						<p>
-							Introducing, Virtual Exposure Therapy.
-							<br>
-							A virtual reality platform that makes it possible for patients to take the therapy directly
-							at the comfort of their home, by using any kind of VR headset.
-						</p><p>
-							Virtual Exposure Therapy provides treatment for people with phobia or trauma condition by
-							exposing them to their feared situations or objects in a controlled virtual environment, and
-							their vitals are monitored to keep track of their progress.
-						</p><p>
-							Users can select from a wide range of phobia modules according to as per's condition. Once
-							VR module is loaded, the users are given a series of tasks in the increasing order of
-							difficulty, Patient performs these tasks in minimum time span while facing their fears and
-							maintaining the state of calmness. Advancing to next levels in the environment overtime will
-							cause a gradual decline in fear response.
-						</p>
-
-						<h4 class="spanborder mt-5"><span>Sneak Peek</span></h4>
-						<div class="row justify-content-between pt-0 pb-5">
-							<div class="col-md-6 p-0">
-								<div class="container p-0 OverlayImage zoom">
-									<img src="assets/images/technical/vet/1.jpg" id="popimg"
-										onclick="ImgViewer(this.src,this.alt)">
-								</div>
-								<div class="container p-0 OverlayImage zoom">
-									<img src="assets/images/technical/vet/3.jpg" id="popimg"
-										onclick="ImgViewer(this.src,this.alt)">
-								</div>
-
-							</div>
-							<div class="col-md-6 p-0">
-								<div class="container p-0 OverlayImage zoom">
-									<img src="assets/images/technical/vet/2.jpg" id="popimg"
-										onclick="ImgViewer(this.src,this.alt)">
-								</div>
-								<div class="container p-0 OverlayImage zoom">
-									<img src="assets/images/technical/vet/4.jpg" id="popimg"
-										onclick="ImgViewer(this.src,this.alt)">
-								</div>
-								
-							</div>
-						</div>
-
-						<blockquote>
+						<h4 class="pt-5 spanborder"><span>The Story behind</span></h4>
+						<div class="entry-main-content dropcap">
+							<p>The inspiration for this project came from one of the team members and original creator Ishlok Vashistha. 2 years back, Ishlok himself was a PTSD patient. He developed the condition after witnessing a traumatic incident in which i lost my friend in a water lake.</p>
 							<p>
-								All the patient's performance during the session is recorded by a vitals monitoring band and
-							evaluated using Microsoft Azure Machine Learning Studio, thereby eliminating the requirement
-							of a psychiatrist every time you take the therapy.
+								"2 years of my life following the incident were miserable. I got into depression, stopped going out and gradually even developed phobia of water. It was at that point when i realised how serious this problem is and how our society neglects the presence of such
+								conditions" - Ishlok Vashistha<br />
+								The experience of Ishlok inspired us to develop something for people facing similar kind of challenges in their lives. So, that they can have a speedy recovery.
 							</p>
-						</blockquote>
 
-						<hr class="section-divider">
+							<div class="divider"></div>
+							<h2>Virtual-Reality treatment</h2>
+							<p>
+								Introducing, Virtual Exposure Therapy.
+								<br />
+								A virtual reality platform that makes it possible for patients to take the therapy directly at the comfort of their home, by using any kind of VR headset.
+							</p>
+							<p>Virtual Exposure Therapy provides treatment for people with phobia or trauma condition by exposing them to their feared situations or objects in a controlled virtual environment, and their vitals are monitored to keep track of their progress.</p>
+							<p>
+								Users can select from a wide range of phobia modules according to as per's condition. Once VR module is loaded, the users are given a series of tasks in the increasing order of difficulty, Patient performs these tasks in minimum time span while facing their fears and
+								maintaining the state of calmness. Advancing to next levels in the environment overtime will cause a gradual decline in fear response.
+							</p>
 
-					</div>
+							<h4 class="mt-5 spanborder"><span>Sneak Peek</span></h4>
+							<div class="pt-0 pb-5 row justify-content-between">
+								<div class="p-0 col-md-6">
+									<div class="container p-0 OverlayImage zoom">
+										<img src="assets/images/technical/vet/1.jpg" id="popimg" onclick="ImgViewer(this.src,this.alt)" />
+									</div>
+									<div class="container p-0 OverlayImage zoom">
+										<img src="assets/images/technical/vet/3.jpg" id="popimg" onclick="ImgViewer(this.src,this.alt)" />
+									</div>
+								</div>
+								<div class="p-0 col-md-6">
+									<div class="container p-0 OverlayImage zoom">
+										<img src="assets/images/technical/vet/2.jpg" id="popimg" onclick="ImgViewer(this.src,this.alt)" />
+									</div>
+									<div class="container p-0 OverlayImage zoom">
+										<img src="assets/images/technical/vet/4.jpg" id="popimg" onclick="ImgViewer(this.src,this.alt)" />
+									</div>
+								</div>
+							</div>
 
-					<h4 class="spanborder"><span>Awards</span></h4>
-					<div class="entry-bottom">
-						<div class="tags-wrap heading">
-							<span style="font-size: 1rem;line-height: 1.5rem">
-								<kbd style="background-color: #03a87c;margin-right: 5px">Jury's Choice</kbd>
-								Accenture Innovation Challenge 2018
-								<br>
-								<kbd style="background-color: #03a87c;margin-right: 5px">Bronze Medal</kbd>
-								International Exhibition for Young Inventors 2018
-							</span>
-							
+							<blockquote>
+								<p>All the patient's performance during the session is recorded by a vitals monitoring band and evaluated using Microsoft Azure Machine Learning Studio, thereby eliminating the requirement of a psychiatrist every time you take the therapy.</p>
+							</blockquote>
+
+							<hr class="section-divider" />
 						</div>
-					</div>
-					<h4 class="spanborder"><span>Built using</span></h4>
-					<div class="entry-bottom">
-						<div class="tags-wrap heading">
-							<span class="tags">
-								<a rel="tag">Unity</a>
-								<a rel="tag">JavaScript</a>
-								<a rel="tag">C#</a>
-								<a rel="tag">ChartJS</a>
 
-
-							</span>
+						<h4 class="spanborder"><span>Awards</span></h4>
+						<div class="entry-bottom">
+							<div class="tags-wrap heading">
+								<span style="font-size: 1rem; line-height: 1.5rem">
+									<kbd style="background-color: #03a87c; margin-right: 5px">Jury's Choice</kbd>
+									Accenture Innovation Challenge 2018
+									<br />
+									<kbd style="background-color: #03a87c; margin-right: 5px">Bronze Medal</kbd>
+									International Exhibition for Young Inventors 2018
+								</span>
+							</div>
 						</div>
-					</div>
-
-				</article>
-				<!--entry-content-->
-
-				<!--Begin post related-->
-				<div class="related-posts mb-5 pt-5">
-					<h4 class="spanborder text-center">
-						<span>Other Projects</span>
-					</h4>
-					<div class="row justify-content-between">
-						<div class="divider-2"></div>
-
-						<article class="col-md-4">
-							<div class="mb-3 d-flex row">
-								<figure class="col-md-5"><a href="caeli.html"><img
-											src="assets/images/technical/01.jpg" alt="Caeli"></a>
-								</figure>
-								<div class="entry-content col-md-7 pl-md-0">
-									<h5 class="entry-title mb-3"><a href="caeli.html">
-										Caeli
-									</a></h5>
-									<div class="entry-meta align-items-center">
-										Breathe Freely with Caeli<br>
-										<span>Sep 18</span>
-										<span class="middotDivider"></span>
-										<span class="readingTime" title="3 min read">2 Awards</span>
-
-									</div>
-								</div>
+						<h4 class="spanborder"><span>Built using</span></h4>
+						<div class="entry-bottom">
+							<div class="tags-wrap heading">
+								<span class="tags">
+									<a rel="tag">Unity</a>
+									<a rel="tag">JavaScript</a>
+									<a rel="tag">C#</a>
+									<a rel="tag">ChartJS</a>
+								</span>
 							</div>
-						</article>
+						</div>
+					</article>
+					<!--entry-content-->
 
-						<article class="col-md-4">
-							<div class="mb-3 d-flex row">
-								<figure class="col-md-5"><a href="otr.html"><img
-											src="assets/images/technical/otr.png" alt="OTR Mark"></a>
-								</figure>
-								<div class="entry-content col-md-7 pl-md-0">
-									<h5 class="entry-title mb-3"><a href="otr.html">
-										OTR-Mark
-									</a></h5>
-									<div class="entry-meta align-items-center">
-										Enjoy Genuine Goods<br>
-										<span>May 18</span>
-										<span class="middotDivider"></span>
-										<span class="readingTime" title="3 min read">2 Honors</span>
+					<!--Begin post related-->
+					<div class="pt-5 mb-5 related-posts">
+						<h4 class="text-center spanborder">
+							<span>Other Projects</span>
+						</h4>
+						<div class="row justify-content-between">
+							<div class="divider-2"></div>
 
-									</div>
-								</div>
-							</div>
-						</article>
-
-						
-						<article class="col-md-4">
-							<div class="mb-3 d-flex row">
-								<figure class="col-md-5"><a href="swastika.html"><img
-											src="assets/images/technical/04.jpg" alt="Swastika"></a>
-								</figure>
-								<div class="entry-content col-md-7 pl-md-0">
-									<h5 class="entry-title mb-3"><a href="swastika.html">
-										Swastika
-									</a></h5>
-									<div class="entry-meta align-items-center">
-										Connecting Donors with NGOs<br>
-										<span>Feb 2017</span>
-										<span class="middotDivider"></span>
-										<span class="readingTime" title="3 min read">1 Award</span>
-
-									</div>
-								</div>
-							</div>
-						</article>
-
-					</div>
-				</div>
-				<!--End post related-->
-
-				<!--Begin Comment-->
-				<div class="single-comment comments_wrap">
-					<section id="comments">
-						<div class="comments-inner clr">
-							<div id="respond" class="comment-respond">
-								<h3 id="reply-title" class="comment-reply-title">Leave a Comment</h3>
-								<form action="#" method="post" id="commentform" class="comment-form" novalidate="">
-									<p class="comment-notes">
-										<span id="email-notes">Your email address will not be published.</span>
-										Required
-										fields are marked <span class="required">*</span>
-									</p>
-									<p class="comment-form-comment">
-										<label for="comment">Comment</label>
-										<textarea id="comment" name="comment" cols="45" rows="3" maxlength="65525"
-											required="required"></textarea>
-									</p>
-									<div class="row">
-										<div class="comment-form-author col-sm-12 col-md-6">
-											<p>
-												<label for="author">Name*</label>
-												<input id="author" name="author" type="text" value="" size="30"
-													aria-required="true">
-											</p>
-										</div>
-										<div class="comment-form-email col-sm-12 col-md-6">
-											<p>
-												<label for="email">Email*</label>
-												<input id="email" name="email" type="email" value="" size="30"
-													aria-required="true">
-											</p>
+							<article class="col-md-4">
+								<div class="mb-3 d-flex row">
+									<figure class="col-md-5">
+										<a href="caeli.html"><img src="assets/images/technical/01.jpg" alt="Caeli" /></a>
+									</figure>
+									<div class="entry-content col-md-7 pl-md-0">
+										<h5 class="mb-3 entry-title"><a href="caeli.html"> Caeli </a></h5>
+										<div class="entry-meta align-items-center">
+											Breathe Freely with Caeli<br />
+											<span>Sep 18</span>
+											<span class="middotDivider"></span>
+											<span class="readingTime" title="3 min read">2 Awards</span>
 										</div>
 									</div>
-									<p class="form-submit">
-										<input name="submit" type="submit" id="submit"
-											class="submit btn btn-success btn-block" value="Comment">
-									</p>
-								</form>
-							</div>
-							<!-- #respond -->
+								</div>
+							</article>
+
+							<article class="col-md-4">
+								<div class="mb-3 d-flex row">
+									<figure class="col-md-5">
+										<a href="otr.html"><img src="assets/images/technical/otr.png" alt="OTR Mark" /></a>
+									</figure>
+									<div class="entry-content col-md-7 pl-md-0">
+										<h5 class="mb-3 entry-title"><a href="otr.html"> OTR-Mark </a></h5>
+										<div class="entry-meta align-items-center">
+											Enjoy Genuine Goods<br />
+											<span>May 18</span>
+											<span class="middotDivider"></span>
+											<span class="readingTime" title="3 min read">2 Honors</span>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="col-md-4">
+								<div class="mb-3 d-flex row">
+									<figure class="col-md-5">
+										<a href="swastika.html"><img src="assets/images/technical/04.jpg" alt="Swastika" /></a>
+									</figure>
+									<div class="entry-content col-md-7 pl-md-0">
+										<h5 class="mb-3 entry-title"><a href="swastika.html"> Swastika </a></h5>
+										<div class="entry-meta align-items-center">
+											Connecting Donors with NGOs<br />
+											<span>Feb 2017</span>
+											<span class="middotDivider"></span>
+											<span class="readingTime" title="3 min read">1 Award</span>
+										</div>
+									</div>
+								</div>
+							</article>
 						</div>
-					</section>
+					</div>
+					<!--End post related-->
 				</div>
-				<!--End Comment-->
-			</div>
-			<!--container-->
-		</main>
-		<footer class="mt-5" style="background-color: #222; color:#fff;border-top: 5px solid #03a87c">
-			<div class="container" style="padding-top:20px">
-				<div class="row">
-					<div class="col-md-12 copyright text-center">
-						<p>
-							Cross the Barrier of your fears
-						</p>
+				<!--container-->
+			</main>
+			<footer class="mt-5" style="background-color: #222; color: #fff; border-top: 5px solid #03a87c">
+				<div class="container" style="padding-top: 20px">
+					<div class="row">
+						<div class="text-center col-md-12 copyright">
+							<p>Cross the Barrier of your fears</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
-	</div>
-	<!--#wrapper--> <a href="#" class="back-to-top heading"><i class="icon-left-open-big"></i><span
-			class="d-lg-inline d-md-none">Top</span></a>
+			</footer>
+		</div>
+		<!--#wrapper-->
+		<a href="#" class="back-to-top heading"><i class="icon-left-open-big"></i><span class="d-lg-inline d-md-none">Top</span></a>
 
-	<!-- ads popup 
+		<!-- ads popup 
     <div id="popup_this" style="display: none">
         <span class="button b-close">
             <span>X</span>
@@ -449,27 +329,26 @@
                 src="assets/images/wp-version.png" alt="ads"></a>
 	</div> -->
 
-	<!--Scripts-->
-	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/jquery-scrolltofixed-min.js"></script>
-	<script src="assets/js/theia-sticky-sidebar.js"></script>
-	<script src="assets/js/scripts.js"></script>
+		<!--Scripts-->
+		<script src="assets/js/bootstrap.js"></script>
+		<script src="assets/js/jquery-scrolltofixed-min.js"></script>
+		<script src="assets/js/theia-sticky-sidebar.js"></script>
+		<script src="assets/js/scripts.js"></script>
 
-	<script>
-		var modal = document.getElementById("myModal");
-		var modalImg = document.getElementById("imgview");
-		var captionText = document.getElementById("caption");
+		<script>
+			var modal = document.getElementById("myModal");
+			var modalImg = document.getElementById("imgview");
+			var captionText = document.getElementById("caption");
 
-		modal.onclick = function () {
-			modal.style.display = "none";
-		}
+			modal.onclick = function () {
+				modal.style.display = "none";
+			};
 
-		function ImgViewer(url, cap) {
-			modal.style.display = "block";
-			modalImg.src = url;
-			captionText.innerHTML = cap;
-		}
-	</script>
-</body>
-
+			function ImgViewer(url, cap) {
+				modal.style.display = "block";
+				modalImg.src = url;
+				captionText.innerHTML = cap;
+			}
+		</script>
+	</body>
 </html>
